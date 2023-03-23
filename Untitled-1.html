@@ -1,0 +1,162 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Nutka - Twój sklep muzyczny</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+            
+		}
+		h1 {
+			text-align: center;
+			color: #333333;
+		}
+		.catalog {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #ffffff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.category {
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #cccccc;
+		}
+		.category h2 {
+			color: #333333;
+			margin-bottom: 10px;
+			font-size: 24px;
+		}
+		.category ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.category li {
+			margin-bottom: 10px;
+		}
+		.category li a {
+			color: #666666;
+			text-decoration: none;
+			display: block;
+			padding: 10px;
+			background-color: #f8f8f8;
+			border: 1px solid #cccccc;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+		.category li a:hover {
+			background-color: #e8e8e8;
+		}
+		.image-gallery {
+			position: relative;
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #ffffff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+		.image-gallery h2 {
+			color: #333333;
+			margin-bottom: 10px;
+			font-size: 24px;
+		}
+		.image-gallery .prev {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-50%, -50%);
+			font-size: 30px;
+			color: #333333;
+			cursor: pointer;
+		}
+		.image-gallery .next {
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(50%, -50%);
+			font-size: 30px;
+			color: #333333;
+			cursor: pointer;
+		}
+		.image-gallery .image-container {
+			position: relative;
+			overflow: hidden;
+			max-height: 400px;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		.image-gallery img {
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s ease;
+		}
+		.image-gallery img:hover {
+			transform: scale(1.1);
+		}
+	</style>
+</head>
+<body>
+	<div class="catalog">
+		<h1>Nutka - Twój sklep muzyczny</h1>
+		<div class="category">
+            <h2>Gitary</h2>
+			<ul>
+				<li><a href="#">Akustyczne</a>
+                    <img src="https://castelo.pl/789-large_default/gitara-akustyczna-castelo-g3-czerwona.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Elektryczne</a>  <img src="https://static2.abixmusic.pl/pol_pl_WASHBURN-WS-300-H-B-gitara-elektryczna-312_2.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Basowe</a>  <img src="https://jarmulamusic.pl/77817-large_default/gitara-basowa-music-man-sterling-ray-5-mg.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Klasyczne</a>  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBIWDxgVFRUVGBgaDxkYHBoYGBgYGhUYGRkZGhwZGBocIS4lHCMrHxgcJzgmKy8xNTU1GiU7QDs0Py40NTEBDAwMEA8QHhISHjYrISw3NDQ3MTQxNDQ0ND00MT80MTQ0MTQ0NDQ0NDQ/NTQ6NTQxNDQ0NDQ0NDQ0NDQxNDQ0NP/AABEIARMAtwMBIgACEQEDEQH/xAAcAAEAAgIDAQAAAAAAAAAAAAAABgcBBQIDBAj/xABHEAACAQIDAwcHCQcCBgMAAAABAgADEQQSIQUxQQYHIjJRcbETFFJhYoGRIzNCcoKhwdHwJENTkqKywhXxY3OjpLPSFhcl/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAEDBAIF/8QAJBEBAAICAgIBBAMAAAAAAAAAAAECAxEhMRJBMgRRUmEiQnH/2gAMAwEAAhEDEQA/ALjiIkJIiICIiAiIgIicWYAXJsALkngIHKJTHKznFr1i9DDg0lFbSqjsKjIu7dbLc69ttO2cticu6uFxJWt5SrQakhVQVL0yUVgVLEXBubgns7NeZtHlEO/CdbXLE8+z8YlailVDdHQMpsRcH1GeidOCIiAiIgIiICZmIgIiICIiAiIgIiICIiAkW5abdSjT83CZ3rUHst7DICqvu6RJVzYKD1T2SUyGct0w1PE4bEsrtiENVKChlVCxQ61AdSASLBdSWGhieiO1PY/BlqdSshy5MS2ZMpOZXK26Y9G50IGmvG05bUpE0g6lAVoUySzBbqA6kDNoWuoFt54SSbIxtPzbaGHKsq1EpsgFyEyoSbk2P0RbTh6pjkniqKpUFcqqvsuqhLgWV1qEC99xtU3yr3Vf6lN+ajF5tmInoM5vcaZnY2tv7dZOJXPM9iAcEUAF87HNpewyWB4kXY/E9ssaWR0pt2RESUEREBERATMxEBERAREQEREBERAREQEinLvC4Q06FbEioTSxiNTFNlUsxIOVi9hl6GY6g2TQyVzTcqeTtHHYbzesXVc6uChUMrLcaXBG5iN3GBW3J/aFFcXjfKqKaVNn1C6gkhWzkMFvbTptYdlp0cksTSp4lXxBVUyVA+cZlU1PIuq7tekwE3fKDDVsHtQ4qmpCPTKI1s6o7KBlcXFrut/WX0PZo9iYpabirZXAZzZ1JUiojVAGH1XQerLKbca/Ur46n9w3XMy6rRqpYE+WsGFtwXgeIOW+ktCV7zWbNyjEViE6VbIuUaLl6+XsGawt7MsKWx0pt2RESUEREBERATMxEBERAREQEREBERAREQERECP8tMQ9PBZ0Nm86w4vZW0avTVtGBHVJErIbexWTpCi/ySnp4egbnyGY3sg4j4aSyuXVvMdQSPOsNuNv39O2tjKtL08nVcfJL9NT+4PsCdRESLH5v8calGsClNMuJbSmmQHMSSxF7XPEyXSD82mXJiMt/nlOoA35uwycSJCIiQEREBERATMxEBERAREQEREBERAREQERECOcugPMbEkDzrD7hfdWQ7rjslUhaeTRz80nWS37luwnslq8u1vglFwP2uhqb8KingPVKpWkuT5xPm04P/BqexOqiwObJQBibMG+UTcCLdftAk6kB5r0sMT0la9RD0b6aPvuPXJ9InsIiJAREQEREBMzEQEREBERAREQEREBERAREQI1y8W+CUXA/a6Opvb5wdgJlT+RXJpUT5tPTG6lU7V/Vpa3L0DzJQSB+2UNTe3zgPDutKkamuQfKJ1E4VP4dX2J1AsDmtp5WxHSU38mdCDwPw3ywpXPNWoD17OrXRDoGFtPaUdssaRPYRESAiIgIiICZmIgIiICIiAiIgIiICIiAiIgRbnBI8zp5iQPPqO4AnrEjQkcRKlKUyi9N+om9B6FXseWxzhlRhKWYEjz+juIBvdrakHjKnD0yidB+qn019Cr7HqnUHpOua1VFesA170k4EHQJ298smVhzXlPOqoW4/ZxvIPGn2ASz5EhERICIiAiIgJmYiAiIgIiICIiAiIgIiICIiBEecd8uEo6A/8A6FEWP2pVArjyaHyabk9McKw4N6vvlr84xbzfD5Wyn/UaeubLpkqXF+PdKtDVvJparxT98BxrD0u74eqdQekr5rawOPcZVH7He65r76OmrES1ZVPNi1X/AFB8z5l8z3eUD63pa2zE9ustaRIRESAiIgIiICImYGIiICJmYgIiICJmYgIiePae06GHpGpXqpTUfSY2uewDeT6hcwPZEgf/ANiCqSMHhalQA9eoRRp27R1mPcQsw+1ce46ddKeu6jTG7sL1Mx94AnNr1r3LuuO1uoZ5y8agOGokEk4pamjAWADKL3B35m/llZq9PJT6L76f019Ov7E3e1WqHGozVnZr01u7k6ZwbAAa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" alt="" height="200px"max-width="100px"></li>
+			</ul>
+		</div>
+		<div class="category">
+			<h2>Instrumenty klawiszowe</h2>
+			<ul>
+				<li><a href="#">Keyboardy</a> </li>
+				<li><a href="#">Syntezatory</a>  <img src="https://muzyczny.pl/towary1/85238.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Pianina</a>  <img src="https://casiomusic.pl/wp-content/uploads/2022/03/CASIO-AP-270-BK_1.jpg" alt="" height="200px"max-width="100px"></li>
+			</ul>
+		</div>
+		<div class="category">
+			<h2>Perkusje</h2>
+			<ul>
+				<li><a href="#">Akustyczne</a>   <img src="https://a.allegroimg.com/original/11705a/965f29c9449987270480d17d028a/Perkusja-akustyczna-Startone-Zestaw" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Elektroniczne</a>  <img src="https://drumcenter.pl/pol_pl_Perkusja-Pearl-Roadshow-Talerze-Stolek-Palki-BLACK-4677_16.jpg" alt="" height="200px"max-width="100px"></li>
+			</ul>
+		</div>
+		<div class="category">
+			<h2>Mikrofony i nagłośnienie</h2>
+			<ul>
+				<li><a href="#">Mikrofony studyjne</a>  <img src="https://foto.prolech.com.pl/katalog/w800/33-051.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Mikrofony estradowe</a>  <img src="https://www.audiofan24.pl/galerie/r/rode-s-1-najwyzszej-klas_1454.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Wzmacniacze</a>  <img src="https://akustyka.pl/wp-content/uploads/2021/01/FENTON-Wzmacniacz-HiFi-AV100-BT-Stereo.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Kolumny głośnikowe</a>  <img src="https://rad-sat.com.pl/shop/662223-large_default/tonsil-altus-380s-para-kolumny-glosnikowe-podlogowe-gwarancja-10-lat-raty-dostawa-gratis.jpg" alt="" height="200px"max-width="100px"></li>
+			</ul>
+		</div>
+		<div class="category">
+			<h2>Akcesoria</h2>
+			<ul>
+				<li><a href="#">Struny</a>  <img src="https://m.media-amazon.com/images/I/814wBKd5vPS._AC_UF894,1000_QL80_.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Pałeczki perkusyjne</a>  <img src="https://vacat24.pl/userdata/public/gfx/1683.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Stojaki na instrumenty</a>  <img src="https://klawiszowe.pl/images/produkty/stojak-keyboardowy-na-jeden-instrument-pokrowiec.jpg" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Pokrowce i torby</a>  <img src="https://riff.net.pl/44858-medium_default/be-joe-cb1610-pokrowiec-gitara-klasyczna-34.jpg?v2" alt="" height="200px"max-width="100px"></li>
+				<li><a href="#">Akcesoria do nagłośnienia</a>  <img src="https://marketmuzyczny.pl/environment/cache/images/300_300_productGfx_913a9bb135ebd5b4751cec697ac19401.jpg" alt="" height="200px"max-width="100px"></li>
+			</ul>
+		</div>
+	</div>
+
+	
+
+
+
+
+	
+</div>
+</body>
+</html>
+
